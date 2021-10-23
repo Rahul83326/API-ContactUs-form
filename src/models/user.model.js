@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    name: String, 
-    email: String,
-    profile: String ,
-    phone: String,
-    dob: String,
-    joineddate: Date,
-    password: String,
-    subscribedClass: Array,
-    totalGift: String,
+    classname: String,
+    level: Array,
+    classDescription: String,
+    schedule: Array,
+    timing: Array,
     status: String,
     is_active:  { type: Boolean, default: false },
     is_verified:  { type: Boolean, default: false },
