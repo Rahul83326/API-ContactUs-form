@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
     DoctorName: String,
     Profile: String,
+    upload: String,
+    createdon: String,
+    publishedon: String,
     schedule: Array,
     timings: Array,
     status: String,
