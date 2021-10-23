@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    classname: String,
-    level: Array,
-    classDescription: String,
+    GuruName: String,
+    Classes: Array,
+    GuruDescription: String,
     schedule: Array,
-    timing: Array,
     status: String,
     is_active:  { type: Boolean, default: false },
     is_verified:  { type: Boolean, default: false },
