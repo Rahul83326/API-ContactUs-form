@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
     classname: String,
     level: Array,
+    uploadphoto: String,
     classDescription: String,
     schedule: Array,
     timing: Array,
