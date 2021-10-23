@@ -25,6 +25,9 @@ exports.create = (req, res) => {
     const user = new User({
         DoctorName: req.body.DoctorName,
         Profile: req.body.Profile,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         schedule: req.body.schedule,
         timing: req.body.timing,
         status: req.body.status
@@ -76,6 +79,9 @@ exports.update = (req, res) => {
     User.findByIdAndUpdate(req.params.id, {
         DoctorName: req.body.DoctorName,
         Profile: req.body.Profile,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         schedule: req.body.schedule,
         timing: req.body.timing,
         status: req.body.status
