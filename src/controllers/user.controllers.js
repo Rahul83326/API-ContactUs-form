@@ -23,8 +23,16 @@ exports.create = (req, res) => {
 
     // Create a new User
     const user = new User({
-        subject: req.body.subject,
-        message: req.body.message
+        name: req.body.name, 
+        email: req.body.email,
+        profile: req.body.profile,
+        phone: req.body.phone,
+        dob: req.body.dob,
+        joineddate: req.body.joineddate,
+        password: req.body.password,
+        subscribedClass: req.body.subscribedClass,
+        totalGift: req.body.totalGift,
+        status: req.body.status
     });
 
     // Save user in the database
@@ -71,8 +79,16 @@ exports.update = (req, res) => {
 
     // Find user and update it with the request body
     User.findByIdAndUpdate(req.params.id, {
-        subject: req.body.subject,
-        message: req.body.message
+        name: req.body.name, 
+        email: req.body.email,
+        profile: req.body.profile,
+        phone: req.body.phone,
+        dob: req.body.dob,
+        joineddate: req.body.joineddate,
+        password: req.body.password,
+        subscribedClass: req.body.subscribedClass,
+        totalGift: req.body.totalGift,
+        status: req.body.status
     }, {new: true})
     .then(user => {
         if(!user) {
