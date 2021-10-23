@@ -25,6 +25,9 @@ exports.create = (req, res) => {
     const user = new User({
         classname: req.body.classname,
         level: req.body.level,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         classDescription: req.body.classDescription,
         schedule: req.body.schedule,
         timings: req.body.timings,
@@ -77,6 +80,9 @@ exports.update = (req, res) => {
     User.findByIdAndUpdate(req.params.id, {
         classname: req.body.classname,
         level: req.body.level,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         classDescription: req.body.classDescription,
         schedule: req.body.schedule,
         timings: req.body.timings,
