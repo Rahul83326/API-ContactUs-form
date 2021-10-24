@@ -23,9 +23,8 @@ exports.create = (req, res) => {
 
     // Create a new User
     const user = new User({
-        TreatmentName: req.body.TreatmentName,
-        Description: req.body.Description,
-        upload: req.body.upload,
+        BlogTitle: req.body.BlogTitle,
+        BlogPost: req.body.BlogPost,
         createdon: req.body.createdon,
         publishedon: req.body.publishedon,
         status: req.body.status
@@ -75,9 +74,8 @@ exports.update = (req, res) => {
 
     // Find user and update it with the request body
     User.findByIdAndUpdate(req.params.id, {
-        TreatmentName: req.body.TreatmentName,
-        Description: req.body.Description,
-        upload: req.body.upload,
+        BlogTitle: req.body.BlogTitle,
+        BlogPost: req.body.BlogPost,
         createdon: req.body.createdon,
         publishedon: req.body.publishedon,
         status: req.body.status

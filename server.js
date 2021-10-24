@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Setup server port
-const port = process.env.PORT || 3500;
+const port = process.env.PORT || 3400;
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -31,7 +31,7 @@ mongoose.connect(dbConfig.url, {
 
 // define a root/default route
 app.get('/', (req, res) => {
-    res.json({"message": "you got get request"});
+    res.json({"message": "You get request"});
 });
 
 // Require Users routes

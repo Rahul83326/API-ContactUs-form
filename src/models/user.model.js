@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    TreatmentName: String,
-    Description: String,   
-    upload: String,
-    createdon: String,
-    publishedon: String,
+    BlogTitle: String,
+    BlogPost: String,
+    createdon: Array,
+    publishedon: Array,
     status: String,
     is_active:  { type: Boolean, default: false },
     is_verified:  { type: Boolean, default: false },
