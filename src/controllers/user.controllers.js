@@ -23,10 +23,11 @@ exports.create = (req, res) => {
 
     // Create a new User
     const user = new User({
-        DoctorName: req.body.DoctorName,
-        Profile: req.body.Profile,
-        schedule: req.body.schedule,
-        timing: req.body.timing,
+        TreatmentName: req.body.TreatmentName,
+        Description: req.body.Description,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         status: req.body.status
     });
 
@@ -74,10 +75,11 @@ exports.update = (req, res) => {
 
     // Find user and update it with the request body
     User.findByIdAndUpdate(req.params.id, {
-        DoctorName: req.body.DoctorName,
-        Profile: req.body.Profile,
-        schedule: req.body.schedule,
-        timing: req.body.timing,
+        TreatmentName: req.body.TreatmentName,
+        Description: req.body.Description,
+        upload: req.body.upload,
+        createdon: req.body.createdon,
+        publishedon: req.body.publishedon,
         status: req.body.status
     }, {new: true})
     .then(user => {
