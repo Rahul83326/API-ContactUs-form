@@ -1,4 +1,5 @@
 const User = require('../models/user.model.js');
+const db = require('../../config/db.config')
 
 // Retrieve and return all users from the database.
 exports.findAll = (req, res) => {
@@ -20,13 +21,31 @@ exports.create = (req, res) => {
             message: "Please fill all required field"
         });
     }
+console.log("DATA SAVED")
+// db.users.insertOne(req.body);
+//  Create a new User
+ const user = new User({
+     academic:req.body.academic,
+     year:req.body.year,
+     semester:req.body.semester,
+     branch:req.body.branch,
+     course:req.body.course,
+     name:req.body.name,
+     community_admitted:req.body.community_admitted,
+     community_student:req.body.community_student,
+     mode:req.body.mode,
+     score:req.body.score,
+     account:req.body.account,
+     bank:req.body.bank,
+     ifsc:req.body.ifsc,
+     phonenumber:req.body.phonenumber,
+     email:req.body.email,
+     arrear:req.body.arrear,
+     attendance:req.body.attendance,
+     remark:req.body.remark
 
-    // Create a new User
-    const user = new User({
-        subject: req.body.subject,
-        message: req.body.message
-    });
-
+ });
+    console.log(user);
     // Save user in the database
     user.save()
     .then(data => {
@@ -37,7 +56,6 @@ exports.create = (req, res) => {
         });
     });
 };
-
 // Find a single User with a id
 exports.findOne = (req, res) => {
     User.findById(req.params.id)
@@ -71,8 +89,25 @@ exports.update = (req, res) => {
 
     // Find user and update it with the request body
     User.findByIdAndUpdate(req.params.id, {
-        subject: req.body.subject,
-        message: req.body.message
+        academic:req.body.academic,
+        year:req.body.year,
+        semester:req.body.semester,
+        branch:req.body.branch,
+        course:req.body.course,
+        name:req.body.name,
+        community_admitted:req.body.community_admitted,
+        community_student:req.body.community_student,
+        mode:req.body.mode,
+        score:req.body.score,
+        account:req.body.account,
+        bank:req.body.bank,
+        ifsc:req.body.ifsc,
+        phonenumber:req.body.phonenumber,
+        email:req.body.email,
+        arrear:req.body.arrear,
+        attendance:req.body.attendance,
+        remark:req.body.remark
+
     }, {new: true})
     .then(user => {
         if(!user) {
