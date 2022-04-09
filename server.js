@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+var cors = require('cors')
 // create express app
 const app = express();
-
+app.use(cors())
 // Setup server port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3100;
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -33,7 +33,13 @@ mongoose.connect(dbConfig.url, {
 app.get('/', (req, res) => {
     res.json({"message": "Hi, You have received your get request"});
 });
-
+app.get('/api/pg',(req, res) =>{
+    database.collection('users').find({}).toArray((err, result) => {
+        if(err) throw err
+        res.send(result)
+    })
+})
+console.log('users');
 // Require Users routes
 const userRoutes = require('./src/routes/user.routes')
 // using as middleware
